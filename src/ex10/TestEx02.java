@@ -118,13 +118,68 @@ public class TestEx02 {
 		
 		return -1;
 	}
+	
 	public void clear(AorB sw){
 		switch(sw) {
 		case StackA :
+			ptrA = 0;
 			break;
 		case StackB :
+			ptrB = max-1;
 			break;
 		}
 	}
 	
+	public int capacity() {
+		return max;
+	}
+	
+	public int size(AorB sw){
+		switch(sw) {
+		case StackA :
+			return ptrA;
+		case StackB :
+			return ptrB;
+		}
+		return 0;
+	}
+	
+	public boolean isEmpty(AorB sw) {
+		switch(sw) {
+		case StackA :
+			return ptrA<=0;
+		case StackB :
+			return ptrB>=max-1;
+		}
+		return true;
+	}
+	
+	public boolean isFull() {
+		return ptrA >= ptrB+1;
+	}
+	
+	public void dump(AorB sw) {
+		switch(sw) {
+		case StackA :
+			if(ptrA<=0) {
+				System.out.println("스택이 비었습니다.");
+			}else {
+				for(int i=0; i<ptrA; i++) {
+					System.out.print(stk[i]+ " ");
+				}
+				System.out.println();
+			}
+			break;
+		case StackB :
+			if(ptrB>=max-1) {
+				System.out.println("스택이 비었습니다.");
+			}else {
+				for(int i=max-1; i>ptrB; i--) {
+					System.out.print(stk[i] + " ");
+				}
+				System.out.println();
+			}
+			break;
+		}
+	}
 }
