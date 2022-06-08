@@ -36,7 +36,7 @@ public class TestEx02 {
 		}
 		System.out.println("비교를 " + cp + "회 했습니다.");
 		System.out.println("교환를 " + ec + "회 했습니다.");
-	}
+	}	
 	
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
